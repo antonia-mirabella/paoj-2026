@@ -2,7 +2,6 @@
 
 > **Pachet:** `com.pao.laboratory05` · **Curs:** 01–04 · 
 > **Data limită:** miercuri 25 martie 2026, ora 23:59
-
 ---
 
 <details open>
