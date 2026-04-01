@@ -57,7 +57,7 @@ public class Podcast implements Comparable<Podcast>{
 
        // 3. sortare cu lambda — dupa durata descrescator
        java.util.Arrays.sort(podcasts,
-               (p1, p2) -> -1 // TODO trebuie -1 cand vrem sa afisam p2, p1 in ordinea finala, +1 daca p1, p2 e buna, 0 daca sunt egale.
+               (p1, p2) -> p2.lengthInSeconds - p1.lengthInSeconds //  trebuie -1 cand vrem sa afisam p2, p1 in ordinea finala, +1 daca p1, p2 e buna, 0 daca sunt egale.
                );
        System.out.println("Sortate dupa durata (descrescator, lambda):");
        System.out.println(java.util.Arrays.toString(podcasts));
