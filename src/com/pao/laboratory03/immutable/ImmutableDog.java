@@ -8,7 +8,7 @@ public final class ImmutableDog {
     private final String name;
     private final int age;
 
-    public ImmutableDog(String name, int age) {
+        public ImmutableDog(String name, int age) {
         this.name = name;
         this.age = age;
     }
