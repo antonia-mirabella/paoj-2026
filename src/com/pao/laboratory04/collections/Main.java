@@ -1,5 +1,12 @@
 package com.pao.laboratory04.collections;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  * Exercițiul 1 — Colecții: HashMap și TreeMap
  *
@@ -51,6 +58,41 @@ package com.pao.laboratory04.collections;
 public class Main {
     public static void main(String[] args) {
         // TODO: implementează cele 3 părți de mai sus
+        String[] words = {"java", "python", "java", "c++", "python", "java", "rust", "c++", "go"};
+        HashMap<String, Integer> numWords = new HashMap<>();
+        for (String word : words)
+        {
+            // if (numWords.containsKey(word))
+            //     numWords.replace(word, numWords.get(word) + 1);
+            // else
+            //     numWords.put(word, 0); 
+            numWords.put(word, (numWords.getOrDefault(word, 0) + 1));
+        }
+
+        System.out.println("Map complet: " + numWords);
+        System.out.println("Exista rust ? " + numWords.containsKey("rust"));
+        System.out.println("Chei: " + numWords.keySet());
+        System.out.println("Valori: " + numWords.values());
+
+        System.out.println("Parcurgere cu entryset: ");
+        for (Map.Entry<String, Integer>entry : numWords.entrySet())
+        {
+            System.out.println("  " + entry.getKey() + " => " + entry.getValue());
+        }
+
+        TreeMap<String, Integer> sortedWords = new TreeMap<>(numWords);
+        System.out.println("Sortat: " + sortedWords);
+        System.out.println("Prima cheie: " + sortedWords.firstKey());
+        System.out.println("Ultima cheie: " + sortedWords.lastKey());
+    
+        HashMap<String, List<String>> studentiMaterie = new HashMap<>();
+        studentiMaterie.put("PAOJ", new ArrayList<>(Arrays.asList("Ana", "Mihai", "Ion")));
+        studentiMaterie.put("BD", new ArrayList<>(Arrays.asList("Ana", "Elena")));
+
+        System.out.println("Studenti la PAOJ: " + studentiMaterie.get("PAOJ"));
+        studentiMaterie.get("BD").add("George");
+        System.out.println("Studenti la BD (actualizat): " + studentiMaterie.get("BD"));
+    
     }
 }
 
